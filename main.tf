@@ -77,7 +77,13 @@ resource "google_container_node_pool" "monolith_node_pool" {
   }
 
   management {
-    auto_repair = true
+    auto_repair  = true
+    auto_upgrade = true
+  }
+
+  upgrade_settings {
+    max_surge       = "1"
+    max_unavailable = "1"
   }
 
   autoscaling {
@@ -118,7 +124,13 @@ resource "google_container_node_pool" "cart_node_pool" {
   }
 
   management {
-    auto_repair = true
+    auto_repair  = true
+    auto_upgrade = true
+  }
+
+  upgrade_settings {
+    max_surge       = "1"
+    max_unavailable = "1"
   }
 
   autoscaling {
@@ -159,7 +171,13 @@ resource "google_container_node_pool" "checkout_node_pool" {
   }
 
   management {
-    auto_repair = true
+    auto_repair  = true
+    auto_upgrade = true
+  }
+
+  upgrade_settings {
+    max_surge       = "1"
+    max_unavailable = "1"
   }
 
   autoscaling {
